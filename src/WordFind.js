@@ -20,6 +20,7 @@ export class WordFind extends Component {
         words={this.state.words}
         onAdd={this.onAdd}
       />
+      <button onClick={this.generateWordFind}>Generate Word Find</button>
       </div>
     )
   }

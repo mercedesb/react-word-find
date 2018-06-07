@@ -18,8 +18,8 @@ export class WordBank extends Component {
   render () {
     return (
       <div className='WordBank'>
-        { this.props.words.map((word) =>
-          <span>{word}</span>
+        { this.props.words.map((word, i) =>
+          <span key={i}>{word}</span>
           )
         }
       <input 
@@ -34,5 +34,7 @@ export class WordBank extends Component {
 }
 
 WordBank.propTypes = {
+  words: PropTypes.array,
+  onAdd: PropTypes.func
 }
 
