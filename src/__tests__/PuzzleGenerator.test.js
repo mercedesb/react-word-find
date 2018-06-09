@@ -31,10 +31,9 @@ describe('#generate', () => {
         'jenny',
         'bird',
       ]
-      loadSubject({wordBank})
 
       expect(() => {
-        subject.instance().generate()
+        PuzzleGenerator.generate(wordBank)
       }).toThrow()
     })
   })
@@ -43,13 +42,12 @@ describe('#generate', () => {
     it('sets the state', () => {
       const wordBank = [
         'pru',
-        'magoo',
         'dog',
         'jenny',
         'bird'
       ]
       loadSubject({wordBank})
-      subject.instance().generate()
+      PuzzleGenerator.generate(wordBank)
       expect(subject.state('grid').size).toEqual(49)
     })
   })
@@ -57,7 +55,6 @@ describe('#generate', () => {
 
 describe('#getNewConfig', () => {
   it('returns an object with the expected shape', () => {
-    loadSubject()
     const grid = new Grid()
     const wordBank = ['hello', 'there', 'hi']
     const positions = [0, 1, 2]
@@ -67,14 +64,13 @@ describe('#getNewConfig', () => {
       directions: expect.anything(),
       positions: expect.arrayContaining(positions)
     }
-    expect(subject.instance().getNewConfig(grid, wordBank, positions)).toMatchObject(expectedObj)
+    expect(PuzzleGenerator.getNewConfig(grid, wordBank, positions)).toMatchObject(expectedObj)
   })
 })
 
 describe('#getDirection', () => {
   describe('with a direction in the stack', () => {
     it('returns a direction', () => {
-      loadSubject()
       const grid = new Grid()
       const positions = [0, 1, 2]
       const right = {
@@ -89,13 +85,12 @@ describe('#getDirection', () => {
         word: 'hello'
       }
 
-      expect(subject.instance().getDirection(config)).toEqual(right)
+      expect(PuzzleGenerator.getDirection(config)).toEqual(right)
     })
   })
 
   describe('without a direction in the stack', () => {
     it('returns a direction', () => {
-      loadSubject()
       const grid = new Grid()
       const positions = [0, 1, 2]
       const directions = []
@@ -106,8 +101,8 @@ describe('#getDirection', () => {
         word: 'hello'
       }
 
-      expect(subject.instance().getDirection(config)).toBeDefined()
-      expect(subject.instance().getDirection(config)).not.toBeNull()
+      expect(PuzzleGenerator.getDirection(config)).toBeDefined()
+      expect(PuzzleGenerator.getDirection(config)).not.toBeNull()
     })
   })
 
@@ -117,7 +112,6 @@ describe('#getDirection', () => {
 describe('#tryWord', () => {
   describe('with a word that will fit within the row', () => {
     it('returns a new grid with the word placed', () => {
-      loadSubject()
       const grid = new Grid()
       const word = 'dog'
       const position = 2
@@ -126,7 +120,7 @@ describe('#tryWord', () => {
         moveColumn: 1
       }
 
-      const returnedGrid = subject.instance().tryWord(grid, word, position, right)
+      const returnedGrid = PuzzleGenerator.tryWord(grid, word, position, right)
       expect(returnedGrid).not.toBeNull()
       expect(returnedGrid.at(2)).toEqual('d')
       expect(returnedGrid.at(3)).toEqual('o')
@@ -136,7 +130,6 @@ describe('#tryWord', () => {
   
   describe('with a word that will not fit within the row', () => {
     it('returns null', () => {
-      loadSubject()
       const grid = new Grid()
       const word = 'prudence'
       const position = 2
@@ -144,13 +137,12 @@ describe('#tryWord', () => {
         moveRow: 0,
         moveColumn: 1
       }
-      expect(subject.instance().tryWord(grid, word, position, right)).toBeNull()
+      expect(PuzzleGenerator.tryWord(grid, word, position, right)).toBeNull()
     })
   })
 
   describe('with a word that will fit within the column', () => {
     it('returns a new grid with the word placed', () => {
-      loadSubject()
       const grid = new Grid()
       const word = 'dog'
       const position = 2
@@ -158,7 +150,7 @@ describe('#tryWord', () => {
         moveRow: 1,
         moveColumn: 0
       }
-      const returnedGrid = subject.instance().tryWord(grid, word, position, down)
+      const returnedGrid = PuzzleGenerator.tryWord(grid, word, position, down)
       expect(returnedGrid).not.toBeNull()
       expect(returnedGrid.at(2)).toEqual('d')
       expect(returnedGrid.at(9)).toEqual('o')
@@ -168,7 +160,6 @@ describe('#tryWord', () => {
 
   describe('with a word that will fit not within the column', () => {
     it('returns null', () => {
-      loadSubject()
       const grid = new Grid()
       const word = 'prudence'
       const position = 2
@@ -176,7 +167,7 @@ describe('#tryWord', () => {
         moveRow: 1,
         moveColumn: 0
       }
-      expect(subject.instance().tryWord(grid, word, position, down)).toBeNull()
+      expect(PuzzleGenerator.tryWord(grid, word, position, down)).toBeNull()
     })
   })
 })
@@ -185,35 +176,35 @@ describe('#withinGrid', () => {
   describe('when rows and columns are inside grid', () => {
     it('returns true', () => {
       const grid = new Grid()
-      expect(subject.instance().withinGrid(grid, 3, 3)).toEqual(true)
+      expect(PuzzleGenerator.withinGrid(grid, 3, 3)).toEqual(true)
     })
   })
 
   describe('when rows is at edge of grid', () => {
     it('returns true', () => {
       const grid = new Grid()
-      expect(subject.instance().withinGrid(grid, 0, 3)).toEqual(true)
+      expect(PuzzleGenerator.withinGrid(grid, 0, 3)).toEqual(true)
     })
   })
 
   describe('when columns is at edge of grid', () => {
     it('returns true', () => {
       const grid = new Grid()
-      expect(subject.instance().withinGrid(grid, 3, 6)).toEqual(true)
+      expect(PuzzleGenerator.withinGrid(grid, 3, 6)).toEqual(true)
     })
   })
 
   describe('when rows are beyond grid', () => {
     it('returns false', () => {
       const grid = new Grid()
-      expect(subject.instance().withinGrid(grid, 7, 3)).toEqual(false)
+      expect(PuzzleGenerator.withinGrid(grid, 7, 3)).toEqual(false)
     })
   })
 
   describe('when rows are beyond grid', () => {
     it('returns false', () => {
       const grid = new Grid()
-      expect(subject.instance().withinGrid(grid, 3, 9)).toEqual(false)
+      expect(PuzzleGenerator.withinGrid(grid, 3, 9)).toEqual(false)
     })
   })
 })
@@ -221,25 +212,22 @@ describe('#withinGrid', () => {
 describe('#positionAvailable', () => {
   describe('when there is nothing at the current position', () => {
     it('returns true', () => {
-      loadSubject()
       const grid = new Grid(['h', null, null, 'i' ])
-      expect(subject.instance().positionAvailable(grid, 1, 'a')).toEqual(true)
+      expect(PuzzleGenerator.positionAvailable(grid, 1, 'a')).toEqual(true)
     })
   })
 
   describe('when the same letter is at the current position', () => {
     it('returns true', () => {
-      loadSubject()
       const grid = new Grid(['h', null, null, 'i' ])
-      expect(subject.instance().positionAvailable(grid, 0, 'h')).toEqual(true)
+      expect(PuzzleGenerator.positionAvailable(grid, 0, 'h')).toEqual(true)
     })
   })
 
   describe('when a different letter is at the current position', () => {
     it('returns true', () => {
-      loadSubject()
       const grid = new Grid(['h', null, null, 'i' ])
-      expect(subject.instance().positionAvailable(grid, 0, 'a')).toEqual(false)
+      expect(PuzzleGenerator.positionAvailable(grid, 0, 'a')).toEqual(false)
     })
   })
 })
@@ -247,27 +235,23 @@ describe('#positionAvailable', () => {
 describe('#getNextRowPosition', () => {
   describe('when direction is right', () => {
     it('returns same row index', () => {
-      loadSubject()
-      
       const right = {
         moveRow: 0,
         moveColumn: 1
       }
 
-      expect(subject.instance().getNextRowPosition(right, 0)).toEqual(0)
+      expect(PuzzleGenerator.getNextRowPosition(right, 0)).toEqual(0)
     })
   })
 
   describe('when direction is down', () => {
     it('returns increased row index', () => {
-      loadSubject()
-        
       const down = { 
         moveRow: 1,
         moveColumn: 0
       }
 
-      expect(subject.instance().getNextRowPosition(down, 0)).toEqual(1)
+      expect(PuzzleGenerator.getNextRowPosition(down, 0)).toEqual(1)
     })
   })
 })
@@ -275,39 +259,33 @@ describe('#getNextRowPosition', () => {
 describe('#getNextColumnPosition', () => {
   describe('when direction is right', () => {
     it('returns increased column index', () => {
-      loadSubject()
-      
       const right = {
         moveRow: 0,
         moveColumn: 1
       }
 
-      expect(subject.instance().getNextColumnPosition(right, 0)).toEqual(1)
+      expect(PuzzleGenerator.getNextColumnPosition(right, 0)).toEqual(1)
     })
   })
 
   describe('when direction is down', () => {
     it('returns same column index', () => {
-      loadSubject()
-        
       const down = { 
         moveRow: 1,
         moveColumn: 0
       }
 
-      expect(subject.instance().getNextColumnPosition(down, 0)).toEqual(0)
+      expect(PuzzleGenerator.getNextColumnPosition(down, 0)).toEqual(0)
     })
   })
 })
 
 describe('#shuffle', () => {
   it('returns a new array', () => {
-    loadSubject()
-    expect(subject.instance().shuffle(wordBank)).not.toBe(wordBank)
+    expect(PuzzleGenerator.shuffle(wordBank)).not.toBe(wordBank)
   })
 
   it('returns an array with the same items', () => {
-    loadSubject()
-    expect(subject.instance().shuffle(wordBank)).toEqual(expect.arrayContaining(wordBank))
+    expect(PuzzleGenerator.shuffle(wordBank)).toEqual(expect.arrayContaining(wordBank))
   })
 })

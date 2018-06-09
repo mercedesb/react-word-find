@@ -18,13 +18,12 @@ export class PuzzleGenerator extends Component {
     grid: {}
   }
 
-  generate = () => {
-    const { wordBank } = this.props
+  static generate = (wordBank) => {
     const sortedWordBank = wordBank.sort((a, b) => b.length - a.length)
     let grid = new Grid()
     const positions = Array.from({length: grid.size}, (value, index) => index)
 
-    const configStack = [ this.getNewConfig(grid, sortedWordBank, positions) ]
+    const configStack = [ PuzzleGenerator.getNewConfig(grid, sortedWordBank, positions) ]
 
     let currentConfig
     let direction
@@ -36,7 +35,7 @@ export class PuzzleGenerator extends Component {
         throw 'no solution possible'
       }
 
-      direction = this.getDirection(currentConfig)
+      direction = PuzzleGenerator.getDirection(currentConfig)
       position = currentConfig.positions[currentConfig.positions.length - 1]
 
       if (!position) {
@@ -44,11 +43,11 @@ export class PuzzleGenerator extends Component {
         configStack.pop()
       }
       else {
-        grid = this.tryWord(currentConfig.grid, currentConfig.word, position, direction)
+        grid = PuzzleGenerator.tryWord(currentConfig.grid, currentConfig.word, position, direction)
 
         if (!!grid) {
           if (!!sortedWordBank.length) {
-            configStack.push(this.getNewConfig(grid, sortedWordBank, positions))
+            configStack.push(PuzzleGenerator.getNewConfig(grid, sortedWordBank, positions))
           }
           else {
             // success!
@@ -59,29 +58,29 @@ export class PuzzleGenerator extends Component {
     }
     
     grid.fill()
-    this.setState({ grid: grid })
+    return { grid: grid }
   }
 
-  getNewConfig = (grid, sortedWordBank, positions) => {
+  static getNewConfig = (grid, sortedWordBank, positions) => {
     return {
       grid: grid,
       word: sortedWordBank.shift(),
-      directions: this.shuffle(DIRECTIONS),
-      positions: this.shuffle(positions)
+      directions: PuzzleGenerator.shuffle(DIRECTIONS),
+      positions: PuzzleGenerator.shuffle(positions)
     }
   }
 
-  getDirection = (config) => {
+  static getDirection = (config) => {
     let direction = config.directions.pop()
     if (!direction) {
       config.positions.pop()
-      config.directions = this.shuffle(DIRECTIONS)
+      config.directions = PuzzleGenerator.shuffle(DIRECTIONS)
       direction = config.directions.pop()
     }
     return direction
   }
 
-  tryWord = (grid, word, position, direction) => {
+  static tryWord = (grid, word, position, direction) => {
     const clone = grid.clone()
     const letters = word.split('')
 
@@ -90,7 +89,7 @@ export class PuzzleGenerator extends Component {
     let letter
     let currentIndex
 
-    while (this.withinGrid(clone, currentRow, currentColumn)) {
+    while (PuzzleGenerator.withinGrid(clone, currentRow, currentColumn)) {
       letter = letters.shift()
       if (!letter) {
         break
@@ -98,10 +97,10 @@ export class PuzzleGenerator extends Component {
 
       currentIndex = clone.index(currentRow, currentColumn)
 
-      if (this.positionAvailable(clone, currentIndex, letter)) {
+      if (PuzzleGenerator.positionAvailable(clone, currentIndex, letter)) {
         clone.setAt(currentIndex, letter)
-        currentRow = this.getNextRowPosition(direction, currentRow)
-        currentColumn = this.getNextColumnPosition(direction, currentColumn)
+        currentRow = PuzzleGenerator.getNextRowPosition(direction, currentRow)
+        currentColumn = PuzzleGenerator.getNextColumnPosition(direction, currentColumn)
       }
       else {
         return null
@@ -110,23 +109,23 @@ export class PuzzleGenerator extends Component {
     return letters.length > 0 ? null : clone
   }
 
-  withinGrid = (grid, row, column) => {
+  static withinGrid = (grid, row, column) => {
     return row >= 0 && row < grid.rows && column >= 0 && column < grid.columns
   }
 
-  positionAvailable = (grid, position, letter) => {
+  static positionAvailable = (grid, position, letter) => {
     return !grid.at(position) || grid.at(position) == letter
   }
 
-  getNextRowPosition = (direction, row) => {
+  static getNextRowPosition = (direction, row) => {
     return row += direction.moveRow
   }
 
-  getNextColumnPosition = (direction, column) => {
+  static getNextColumnPosition = (direction, column) => {
     return column += direction.moveColumn
   }
 
-  shuffle = (array) => {
+  static shuffle = (array) => {
     const clone = array.slice(0)
     for (let i = clone.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -135,9 +134,15 @@ export class PuzzleGenerator extends Component {
     return clone
   }
 
+  static getDerivedStateFromProps = (props, state) => {
+    const wordBank = props.wordBank.slice(0)
+    return PuzzleGenerator.generate(wordBank)
+  }
+
   render () {
     return (
       <div>
+        {this.state.grid.print()}
       </div>
     )
   }

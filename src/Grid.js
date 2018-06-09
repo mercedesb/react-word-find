@@ -52,4 +52,8 @@ export class Grid {
       }
     }
   }
+
+  print() {
+    return this.grid
+  }
 }

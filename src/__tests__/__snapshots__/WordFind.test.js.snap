@@ -28,10 +28,11 @@ ShallowWrapper {
           }
 />,
         <button
-          onClick={undefined}
+          onClick={[Function]}
 >
           Generate Word Find
 </button>,
+        undefined,
       ],
       "className": "WordFind",
     },
@@ -58,12 +59,13 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Generate Word Find",
-          "onClick": undefined,
+          "onClick": [Function],
         },
         "ref": null,
         "rendered": "Generate Word Find",
         "type": "button",
       },
+      undefined,
     ],
     "type": "div",
   },
@@ -84,10 +86,11 @@ ShallowWrapper {
             }
 />,
           <button
-            onClick={undefined}
+            onClick={[Function]}
 >
             Generate Word Find
 </button>,
+          undefined,
         ],
         "className": "WordFind",
       },
@@ -114,12 +117,13 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Generate Word Find",
-            "onClick": undefined,
+            "onClick": [Function],
           },
           "ref": null,
           "rendered": "Generate Word Find",
           "type": "button",
         },
+        undefined,
       ],
       "type": "div",
     },
