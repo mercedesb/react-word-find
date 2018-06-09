@@ -54,8 +54,7 @@ input {
   font-size: 1.2rem;
   margin: 0 1em 1em 0;
   padding: 1em;
-  transition: border-color 150ms ease;
-  /*width: 100%;*/ }
+  transition: border-color 150ms ease; }
 
 .WordBank {
   margin: 2em;

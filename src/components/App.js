@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../styles/App.css';
 import { WordBank } from './WordBank'
 import { PuzzleGenerator } from './PuzzleGenerator'
 
