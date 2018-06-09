@@ -147,10 +147,11 @@ export class PuzzleGenerator extends Component {
   }
 
   render () {
+    const { wordBank } = this.props
     return (
       <div className='WordPuzzle WordPuzzle--seven'>
         { this.state.noSolution && (
-            <span>No solution, try again</span>
+            <span>No solution including '{wordBank[wordBank.length - 1]}', try again</span>
           )
         }
         { !this.state.noSolution && (

@@ -10,7 +10,8 @@ export class WordBank extends Component {
     this.setState({ newWord: event.target.value })
   }
 
-  onAdd = () => {
+  onAdd = (event) => {
+    event.preventDefault()
     this.props.onAdd(this.state.newWord)
     this.setState({ newWord: '' })
   }
@@ -24,14 +25,14 @@ export class WordBank extends Component {
             )
           }
         </div>
-        <div className='WordBank-addContainer'>
+        <form className='WordBank-addContainer'>
           <input 
             type='text' 
             onChange={this.onChange}
             value={this.state.newWord}
           />
-          <button className='Button Button--ghost' onClick={this.onAdd}>Add Word</button>
-        </div>
+          <button type='submit' className='Button Button--ghost' onClick={this.onAdd}>Add Word</button>
+        </form>
       </div>
     )
   }

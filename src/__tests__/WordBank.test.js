@@ -34,17 +34,23 @@ describe('#onChange', () => {
 })
 
 describe('#onAdd', () => {
+  let event
+  beforeEach(() => {
+    event = {
+      preventDefault: jest.fn()
+    }
+  })
   it('calls the onAdd function from props', () => {
     loadSubject()
     subject.setState( { newWord: 'newword' } )
-    subject.instance().onAdd()
+    subject.instance().onAdd(event)
     expect(onAdd).toHaveBeenCalledWith('newword')
   })
 
   it('sets the state', () => {
     loadSubject()
     subject.setState( { newWord: 'newword' } )
-    subject.instance().onAdd()
+    subject.instance().onAdd(event)
     expect(subject.state('newWord')).toEqual('')
   })
 })

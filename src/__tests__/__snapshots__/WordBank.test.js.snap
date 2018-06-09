@@ -40,7 +40,7 @@ ShallowWrapper {
                     world
           </div>
 </div>,
-        <div
+        <form
           className="WordBank-addContainer"
 >
           <input
@@ -51,10 +51,11 @@ ShallowWrapper {
           <button
                     className="Button Button--ghost"
                     onClick={[Function]}
+                    type="submit"
           >
                     Add Word
           </button>
-</div>,
+</form>,
       ],
       "className": "WordBank",
     },
@@ -122,6 +123,7 @@ ShallowWrapper {
             <button
               className="Button Button--ghost"
               onClick={[Function]}
+              type="submit"
 >
               Add Word
 </button>,
@@ -151,13 +153,14 @@ ShallowWrapper {
               "children": "Add Word",
               "className": "Button Button--ghost",
               "onClick": [Function],
+              "type": "submit",
             },
             "ref": null,
             "rendered": "Add Word",
             "type": "button",
           },
         ],
-        "type": "div",
+        "type": "form",
       },
     ],
     "type": "div",
@@ -183,7 +186,7 @@ ShallowWrapper {
                         world
             </div>
 </div>,
-          <div
+          <form
             className="WordBank-addContainer"
 >
             <input
@@ -194,10 +197,11 @@ ShallowWrapper {
             <button
                         className="Button Button--ghost"
                         onClick={[Function]}
+                        type="submit"
             >
                         Add Word
             </button>
-</div>,
+</form>,
         ],
         "className": "WordBank",
       },
@@ -265,6 +269,7 @@ ShallowWrapper {
               <button
                 className="Button Button--ghost"
                 onClick={[Function]}
+                type="submit"
 >
                 Add Word
 </button>,
@@ -294,13 +299,14 @@ ShallowWrapper {
                 "children": "Add Word",
                 "className": "Button Button--ghost",
                 "onClick": [Function],
+                "type": "submit",
               },
               "ref": null,
               "rendered": "Add Word",
               "type": "button",
             },
           ],
-          "type": "div",
+          "type": "form",
         },
       ],
       "type": "div",

@@ -27,13 +27,14 @@ ShallowWrapper {
                             ]
           }
 />,
+        undefined,
+        undefined,
         <button
           className="Button Button--ghost"
           onClick={[Function]}
 >
-          Generate Word Find
+          Generate
 </button>,
-        undefined,
       ],
       "className": "App",
     },
@@ -54,20 +55,21 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      undefined,
+      undefined,
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Generate Word Find",
+          "children": "Generate",
           "className": "Button Button--ghost",
           "onClick": [Function],
         },
         "ref": null,
-        "rendered": "Generate Word Find",
+        "rendered": "Generate",
         "type": "button",
       },
-      undefined,
     ],
     "type": "div",
   },
@@ -87,13 +89,14 @@ ShallowWrapper {
                                   ]
             }
 />,
+          undefined,
+          undefined,
           <button
             className="Button Button--ghost"
             onClick={[Function]}
 >
-            Generate Word Find
+            Generate
 </button>,
-          undefined,
         ],
         "className": "App",
       },
@@ -114,20 +117,21 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        undefined,
+        undefined,
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Generate Word Find",
+            "children": "Generate",
             "className": "Button Button--ghost",
             "onClick": [Function],
           },
           "ref": null,
-          "rendered": "Generate Word Find",
+          "rendered": "Generate",
           "type": "button",
         },
-        undefined,
       ],
       "type": "div",
     },
