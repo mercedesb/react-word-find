@@ -15,7 +15,8 @@ const DIRECTIONS = [
 
 export class PuzzleGenerator extends Component {
   state = {
-    grid: {}
+    grid: {},
+    noSolution: false
   }
 
   static generate = (wordBank) => {
@@ -32,7 +33,7 @@ export class PuzzleGenerator extends Component {
     while(true) {
       currentConfig = configStack[configStack.length - 1]
       if (!currentConfig) {
-        throw 'no solution possible'
+        return { grid: {}, noSolution: true }
       }
 
       direction = PuzzleGenerator.getDirection(currentConfig)
@@ -58,7 +59,7 @@ export class PuzzleGenerator extends Component {
     }
     
     grid.fill()
-    return { grid: grid }
+    return { grid: grid, noSolution: false }
   }
 
   static getNewConfig = (grid, sortedWordBank, positions) => {
@@ -139,10 +140,23 @@ export class PuzzleGenerator extends Component {
     return PuzzleGenerator.generate(wordBank)
   }
 
+  getLetters = () => {
+    return this.state.grid.print().map((letter, i) => {
+      return <div className='WordPuzzle-letter' key={i}>{letter}</div>
+    })
+  }
+
   render () {
     return (
-      <div>
-        {this.state.grid.print()}
+      <div className='WordPuzzle WordPuzzle--seven'>
+        { this.state.noSolution && (
+            <span>No solution, try again</span>
+          )
+        }
+        { !this.state.noSolution && (
+            this.getLetters()
+          )
+        }
       </div>
     )
   }

@@ -4,7 +4,7 @@ exports[`#render renders properly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <WordFind />,
+  Symbol(enzyme.__unrendered__): <App />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -28,13 +28,14 @@ ShallowWrapper {
           }
 />,
         <button
+          className="Button Button--ghost"
           onClick={[Function]}
 >
           Generate Word Find
 </button>,
         undefined,
       ],
-      "className": "WordFind",
+      "className": "App",
     },
     "ref": null,
     "rendered": Array [
@@ -59,6 +60,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Generate Word Find",
+          "className": "Button Button--ghost",
           "onClick": [Function],
         },
         "ref": null,
@@ -86,13 +88,14 @@ ShallowWrapper {
             }
 />,
           <button
+            className="Button Button--ghost"
             onClick={[Function]}
 >
             Generate Word Find
 </button>,
           undefined,
         ],
-        "className": "WordFind",
+        "className": "App",
       },
       "ref": null,
       "rendered": Array [
@@ -117,6 +120,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Generate Word Find",
+            "className": "Button Button--ghost",
             "onClick": [Function],
           },
           "ref": null,

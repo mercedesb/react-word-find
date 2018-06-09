@@ -15,26 +15,19 @@ function loadSubject (props = {}) {
   />)
 }
 
-describe('#render', () => {
-  it('renders properly', () => {
-    loadSubject()
-    expect(subject).toMatchSnapshot()
-  })
-})
-
 describe('#generate', () => {
   describe('when no solution possible', () => {
-    it('raises an error', () => {
+    it('sets the state', () => {
       const wordBank = [
         'prudence',
         'dog',
         'jenny',
         'bird',
       ]
+      loadSubject({wordBank})
 
-      expect(() => {
-        PuzzleGenerator.generate(wordBank)
-      }).toThrow()
+      PuzzleGenerator.generate(wordBank)
+      expect(subject.state('noSolution')).toEqual(true)
     })
   })
 

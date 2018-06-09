@@ -26,24 +26,35 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        Array [
-          <span>
-            hello
-</span>,
-          <span>
-            world
-</span>,
-        ],
-        <input
-          onChange={[Function]}
-          type="text"
-          value=""
-/>,
-        <button
-          onClick={[Function]}
+        <div
+          className="WordBank-container"
 >
-          Add Word
-</button>,
+          <div
+                    className="WordBank-word"
+          >
+                    hello
+          </div>
+          <div
+                    className="WordBank-word"
+          >
+                    world
+          </div>
+</div>,
+        <div
+          className="WordBank-addContainer"
+>
+          <input
+                    onChange={[Function]}
+                    type="text"
+                    value=""
+          />
+          <button
+                    className="Button Button--ghost"
+                    onClick={[Function]}
+          >
+                    Add Word
+          </button>
+</div>,
       ],
       "className": "WordBank",
     },
@@ -51,50 +62,102 @@ ShallowWrapper {
     "rendered": Array [
       Object {
         "instance": null,
-        "key": "0",
+        "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "hello",
+          "children": Array [
+            <div
+              className="WordBank-word"
+>
+              hello
+</div>,
+            <div
+              className="WordBank-word"
+>
+              world
+</div>,
+          ],
+          "className": "WordBank-container",
         },
         "ref": null,
-        "rendered": "hello",
-        "type": "span",
-      },
-      Object {
-        "instance": null,
-        "key": "1",
-        "nodeType": "host",
-        "props": Object {
-          "children": "world",
-        },
-        "ref": null,
-        "rendered": "world",
-        "type": "span",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "0",
+            "nodeType": "host",
+            "props": Object {
+              "children": "hello",
+              "className": "WordBank-word",
+            },
+            "ref": null,
+            "rendered": "hello",
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": "1",
+            "nodeType": "host",
+            "props": Object {
+              "children": "world",
+              "className": "WordBank-word",
+            },
+            "ref": null,
+            "rendered": "world",
+            "type": "div",
+          },
+        ],
+        "type": "div",
       },
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "onChange": [Function],
-          "type": "text",
-          "value": "",
+          "children": Array [
+            <input
+              onChange={[Function]}
+              type="text"
+              value=""
+/>,
+            <button
+              className="Button Button--ghost"
+              onClick={[Function]}
+>
+              Add Word
+</button>,
+          ],
+          "className": "WordBank-addContainer",
         },
         "ref": null,
-        "rendered": null,
-        "type": "input",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Add Word",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "Add Word",
-        "type": "button",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "onChange": [Function],
+              "type": "text",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Add Word",
+              "className": "Button Button--ghost",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Add Word",
+            "type": "button",
+          },
+        ],
+        "type": "div",
       },
     ],
     "type": "div",
@@ -106,24 +169,35 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          Array [
-            <span>
-              hello
-</span>,
-            <span>
-              world
-</span>,
-          ],
-          <input
-            onChange={[Function]}
-            type="text"
-            value=""
-/>,
-          <button
-            onClick={[Function]}
+          <div
+            className="WordBank-container"
 >
-            Add Word
-</button>,
+            <div
+                        className="WordBank-word"
+            >
+                        hello
+            </div>
+            <div
+                        className="WordBank-word"
+            >
+                        world
+            </div>
+</div>,
+          <div
+            className="WordBank-addContainer"
+>
+            <input
+                        onChange={[Function]}
+                        type="text"
+                        value=""
+            />
+            <button
+                        className="Button Button--ghost"
+                        onClick={[Function]}
+            >
+                        Add Word
+            </button>
+</div>,
         ],
         "className": "WordBank",
       },
@@ -131,50 +205,102 @@ ShallowWrapper {
       "rendered": Array [
         Object {
           "instance": null,
-          "key": "0",
+          "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "hello",
+            "children": Array [
+              <div
+                className="WordBank-word"
+>
+                hello
+</div>,
+              <div
+                className="WordBank-word"
+>
+                world
+</div>,
+            ],
+            "className": "WordBank-container",
           },
           "ref": null,
-          "rendered": "hello",
-          "type": "span",
-        },
-        Object {
-          "instance": null,
-          "key": "1",
-          "nodeType": "host",
-          "props": Object {
-            "children": "world",
-          },
-          "ref": null,
-          "rendered": "world",
-          "type": "span",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "0",
+              "nodeType": "host",
+              "props": Object {
+                "children": "hello",
+                "className": "WordBank-word",
+              },
+              "ref": null,
+              "rendered": "hello",
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": "1",
+              "nodeType": "host",
+              "props": Object {
+                "children": "world",
+                "className": "WordBank-word",
+              },
+              "ref": null,
+              "rendered": "world",
+              "type": "div",
+            },
+          ],
+          "type": "div",
         },
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "onChange": [Function],
-            "type": "text",
-            "value": "",
+            "children": Array [
+              <input
+                onChange={[Function]}
+                type="text"
+                value=""
+/>,
+              <button
+                className="Button Button--ghost"
+                onClick={[Function]}
+>
+                Add Word
+</button>,
+            ],
+            "className": "WordBank-addContainer",
           },
           "ref": null,
-          "rendered": null,
-          "type": "input",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Add Word",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "Add Word",
-          "type": "button",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "onChange": [Function],
+                "type": "text",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Add Word",
+                "className": "Button Button--ghost",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Add Word",
+              "type": "button",
+            },
+          ],
+          "type": "div",
         },
       ],
       "type": "div",
