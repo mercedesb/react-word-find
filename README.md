@@ -1,4 +1,4 @@
-#react-word-find
+# react-word-find
 
 A small React app created for the purposes of demoing how to create pull requests and other Git features for [Dev Together](https://mercedesb.github.io/dev-together).
 
