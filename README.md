@@ -1,5 +1,11 @@
 #react-word-find
 
+A small React app created for the purposes of demoing how to create pull requests and other Git features for [Dev Together](https://mercedesb.github.io/dev-together).
+
+The logic for creating the word find is not optimized and can be improved in many ways. This was a quick and dirty solution inspired by [Jamis Buck's blog post](http://weblog.jamisbuck.org/2015/9/26/generating-word-search-puzzles.html).
+
+----------------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
