@@ -35,7 +35,7 @@ describe('#onAdd', () => {
   })
 })
 
-describe('#onChange', () => {
+describe('#onSizeChange', () => {
   it('sets the state', () => {
     loadSubject()
     subject.instance().onSizeChange({ target: { value: 8 } })

@@ -20,18 +20,6 @@ describe('Grid', () => {
     })
   })
 
-  describe('#rows', () => {
-    it ('returns 7', () => {
-      expect(grid.rows).toEqual(7)
-    })
-  })
-
-  describe('#columns', () => {
-    it ('returns 7', () => {
-      expect(grid.columns).toEqual(7)
-    })
-  })
-
   describe('#index', () => {
     it ('returns the correct index', () => {
       expect(grid.index(4, 5)).toEqual(33)

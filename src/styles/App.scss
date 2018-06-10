@@ -5,6 +5,7 @@ $brand-color: #44957c;
 $font-family: "Proxima Nova", Arial, sans-serif;
 $white: #FFFFFF;
 $black: #636668;
+$max-num-columns: 15;
 
 html {
   height: 100%;
@@ -123,9 +124,11 @@ input {
   margin: 1em;
   font-size: 2em;
 
-  &--seven {
-    grid-template-rows: repeat(7, auto);
-    grid-template-columns: repeat(7, 40px);
+  @for $i from 1 through $max-num-columns {
+    &--#{$i} {
+      grid-template-rows: repeat(#{$i}, auto);
+      grid-template-columns: repeat(#{$i}, 40px);
+    }
   }
 
   &-letter {

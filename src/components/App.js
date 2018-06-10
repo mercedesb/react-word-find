@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   onSizeChange = (event) => {
-    this.setState({ size: event.target.value })
+    this.setState({ size: parseInt(event.target.value, 10) })
   }
 
   generateWordFind = () => {
@@ -29,6 +29,7 @@ class App extends Component {
       return (
         <PuzzleGenerator
           wordBank={this.state.words}
+          size={this.state.size}
         />
       )
     }
@@ -44,7 +45,7 @@ class App extends Component {
           />
           <div className='WordFind-config'>
             <label>
-              Grid size
+              Grid size (up to 15)
               <input 
                 type='number'
                 onChange={this.onSizeChange}

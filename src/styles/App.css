@@ -95,8 +95,50 @@ input {
   padding: 2em;
   margin: 1em;
   font-size: 2em; }
-  .WordPuzzle--seven {
+  .WordPuzzle--1 {
+    grid-template-rows: repeat(1, auto);
+    grid-template-columns: repeat(1, 40px); }
+  .WordPuzzle--2 {
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, 40px); }
+  .WordPuzzle--3 {
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(3, 40px); }
+  .WordPuzzle--4 {
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: repeat(4, 40px); }
+  .WordPuzzle--5 {
+    grid-template-rows: repeat(5, auto);
+    grid-template-columns: repeat(5, 40px); }
+  .WordPuzzle--6 {
+    grid-template-rows: repeat(6, auto);
+    grid-template-columns: repeat(6, 40px); }
+  .WordPuzzle--7 {
     grid-template-rows: repeat(7, auto);
     grid-template-columns: repeat(7, 40px); }
+  .WordPuzzle--8 {
+    grid-template-rows: repeat(8, auto);
+    grid-template-columns: repeat(8, 40px); }
+  .WordPuzzle--9 {
+    grid-template-rows: repeat(9, auto);
+    grid-template-columns: repeat(9, 40px); }
+  .WordPuzzle--10 {
+    grid-template-rows: repeat(10, auto);
+    grid-template-columns: repeat(10, 40px); }
+  .WordPuzzle--11 {
+    grid-template-rows: repeat(11, auto);
+    grid-template-columns: repeat(11, 40px); }
+  .WordPuzzle--12 {
+    grid-template-rows: repeat(12, auto);
+    grid-template-columns: repeat(12, 40px); }
+  .WordPuzzle--13 {
+    grid-template-rows: repeat(13, auto);
+    grid-template-columns: repeat(13, 40px); }
+  .WordPuzzle--14 {
+    grid-template-rows: repeat(14, auto);
+    grid-template-columns: repeat(14, 40px); }
+  .WordPuzzle--15 {
+    grid-template-rows: repeat(15, auto);
+    grid-template-columns: repeat(15, 40px); }
   .WordPuzzle-letter {
     padding: 0 10px; }
