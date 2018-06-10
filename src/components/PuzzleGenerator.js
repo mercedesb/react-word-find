@@ -19,9 +19,9 @@ export class PuzzleGenerator extends Component {
     noSolution: false
   }
 
-  static generate = (wordBank) => {
+  static generate = (wordBank, size) => {
     const sortedWordBank = wordBank.sort((a, b) => b.length - a.length)
-    let grid = new Grid()
+    let grid = new Grid(size)
     const positions = Array.from({length: grid.size}, (value, index) => index)
 
     const configStack = [ PuzzleGenerator.getNewConfig(grid, sortedWordBank, positions) ]
@@ -111,7 +111,7 @@ export class PuzzleGenerator extends Component {
   }
 
   static withinGrid = (grid, row, column) => {
-    return row >= 0 && row < grid.rows && column >= 0 && column < grid.columns
+    return row >= 0 && row < grid.length && column >= 0 && column < grid.length
   }
 
   static positionAvailable = (grid, position, letter) => {
@@ -137,7 +137,7 @@ export class PuzzleGenerator extends Component {
 
   static getDerivedStateFromProps = (props, state) => {
     const wordBank = props.wordBank.slice(0)
-    return PuzzleGenerator.generate(wordBank)
+    return PuzzleGenerator.generate(wordBank, props.size)
   }
 
   getLetters = () => {
@@ -149,7 +149,7 @@ export class PuzzleGenerator extends Component {
   render () {
     const { wordBank } = this.props
     return (
-      <div className='WordPuzzle WordPuzzle--seven'>
+      <div className={`WordPuzzle WordPuzzle--${this.state.grid.length}`}>
         { this.state.noSolution && (
             <span>No solution including '{wordBank[wordBank.length - 1]}', try again</span>
           )
