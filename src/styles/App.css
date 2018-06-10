@@ -6,18 +6,20 @@ body, #root {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  flex: 1; }
+  flex: 1;
+  align-items: center;
+  background-color: #44957c; }
 
 .App {
   flex: 1;
   text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-color: #44957c;
   font-family: "Proxima Nova", Arial, sans-serif;
   color: #FFFFFF;
-  min-height: 100%; }
+  min-height: 100%;
+  max-width: 1000px; }
 
 .Button {
   background-color: #44957c;
@@ -43,6 +45,11 @@ body, #root {
     .Button--ghost:hover {
       background-color: rgba(255, 255, 255, 0.1); }
 
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; }
+
 input {
   background-color: #FFFFFF;
   color: #636668;
@@ -56,8 +63,16 @@ input {
   padding: 1em;
   transition: border-color 150ms ease; }
 
+.WordFind {
+  display: flex;
+  flex-direction: column;
+  margin: 2em; }
+  .WordFind-config {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em; }
+
 .WordBank {
-  margin: 2em;
   width: 700px; }
   .WordBank-container {
     background-color: #FFFFFF;
@@ -74,6 +89,7 @@ input {
 
 .WordPuzzle {
   display: grid;
+  justify-content: center;
   background-color: #FFFFFF;
   color: #636668;
   padding: 2em;

@@ -1,8 +1,8 @@
 /* eslint-env jest */
 import * as React from 'react'
 import { shallow } from 'enzyme'
-import { PuzzleGenerator } from '../PuzzleGenerator'
-import { Grid } from '../Grid'
+import { PuzzleGenerator } from '../components/PuzzleGenerator'
+import { Grid } from '../components/Grid'
 
 let subject 
 let wordBank

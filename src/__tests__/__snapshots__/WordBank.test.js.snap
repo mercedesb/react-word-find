@@ -26,6 +26,9 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
+        <label>
+          Word Bank
+</label>,
         <div
           className="WordBank-container"
 >
@@ -61,6 +64,17 @@ ShallowWrapper {
     },
     "ref": null,
     "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Word Bank",
+        },
+        "ref": null,
+        "rendered": "Word Bank",
+        "type": "label",
+      },
       Object {
         "instance": null,
         "key": undefined,
@@ -172,6 +186,9 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          <label>
+            Word Bank
+</label>,
           <div
             className="WordBank-container"
 >
@@ -207,6 +224,17 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Word Bank",
+          },
+          "ref": null,
+          "rendered": "Word Bank",
+          "type": "label",
+        },
         Object {
           "instance": null,
           "key": undefined,

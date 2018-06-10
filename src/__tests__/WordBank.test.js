@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import * as React from 'react'
 import { shallow } from 'enzyme'
-import { WordBank } from '../WordBank'
+import { WordBank } from '../components/WordBank'
 
 let subject 
 let words

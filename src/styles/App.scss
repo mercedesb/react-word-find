@@ -15,6 +15,8 @@ body, #root {
   display: flex;
   flex-direction: column;
   flex: 1;
+  align-items: center;
+  background-color: $brand-color;
 }
 
 .App {
@@ -22,11 +24,11 @@ body, #root {
   text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-color: $brand-color;
   font-family: $font-family;
   color: $white;
   min-height:100%;
+  max-width: 1000px;
 }
 
 .Button {
@@ -58,6 +60,12 @@ body, #root {
   }
 }
 
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 input {
   background-color: $white;
   color: $black;
@@ -72,8 +80,19 @@ input {
   transition: border-color 150ms ease;
 }
 
-.WordBank {
+.WordFind {
+  display: flex;
+  flex-direction: column;
   margin: 2em;
+
+  &-config {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+  }
+}
+
+.WordBank {
   width: 700px;
 
   &-container {
@@ -97,6 +116,7 @@ input {
 
 .WordPuzzle {
   display: grid;
+  justify-content: center;
   background-color: $white;
   color: $black;
   padding: 2em;
