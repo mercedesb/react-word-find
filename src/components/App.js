@@ -3,6 +3,8 @@ import '../styles/App.css';
 import { WordBank } from './WordBank'
 import { PuzzleGenerator } from './PuzzleGenerator'
 
+// TA DA!
+
 class App extends Component {
   state = {
     words: ['hello', 'world'],
