@@ -1,8 +1,8 @@
 /* eslint-env jest */
 import * as React from 'react'
 import { shallow } from 'enzyme'
-import { PuzzleGenerator } from '../PuzzleGenerator'
-import { Grid } from '../Grid'
+import { PuzzleGenerator } from '../components/PuzzleGenerator'
+import { Grid } from '../components/Grid'
 
 let subject 
 let wordBank
@@ -205,21 +205,21 @@ describe('#withinGrid', () => {
 describe('#positionAvailable', () => {
   describe('when there is nothing at the current position', () => {
     it('returns true', () => {
-      const grid = new Grid(['h', null, null, 'i' ])
+      const grid = new Grid(7, ['h', null, null, 'i' ])
       expect(PuzzleGenerator.positionAvailable(grid, 1, 'a')).toEqual(true)
     })
   })
 
   describe('when the same letter is at the current position', () => {
     it('returns true', () => {
-      const grid = new Grid(['h', null, null, 'i' ])
+      const grid = new Grid(7, ['h', null, null, 'i' ])
       expect(PuzzleGenerator.positionAvailable(grid, 0, 'h')).toEqual(true)
     })
   })
 
   describe('when a different letter is at the current position', () => {
     it('returns true', () => {
-      const grid = new Grid(['h', null, null, 'i' ])
+      const grid = new Grid(7, ['h', null, null, 'i' ])
       expect(PuzzleGenerator.positionAvailable(grid, 0, 'a')).toEqual(false)
     })
   })

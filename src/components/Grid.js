@@ -1,23 +1,16 @@
 export class Grid {
-  constructor(grid=null) {
-    this.grid = grid || new Array(this.rows * this.columns)
+  constructor(length=7, grid=null) {
+    this.length = length
+    this.grid = grid || new Array(this.length * this.length)
   }
 
   get size() {
     return this.grid.length
   }
 
-  get rows() {
-    return 7
-  }
-
-  get columns() {
-    return 7
-  }
-  
   index(rowIndex, columnIndex) {
     if(!!columnIndex) {
-      return rowIndex * this.columns + columnIndex
+      return rowIndex * this.length + columnIndex
     }
     else {
       return rowIndex
@@ -41,7 +34,7 @@ export class Grid {
   }
 
   clone() {
-    return new Grid(this.grid)
+    return new Grid(this.length, this.grid)
   }
 
   fill() {

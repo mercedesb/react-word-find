@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme'
-import App from '../App';
+import App from '../components/App';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
@@ -32,5 +32,21 @@ describe('#onAdd', () => {
     const expectedState = initialState.concat([word])
     subject.instance().onAdd(word)
     expect(subject.state('words')).toEqual(expectedState)
+  })
+})
+
+describe('#onSizeChange', () => {
+  it('sets the state', () => {
+    loadSubject()
+    subject.instance().onSizeChange({ target: { value: 8 } })
+    expect(subject.state('size')).toEqual(8)
+  })
+})
+
+describe('#generateWordFind', () => {
+  it('sets the state', () => {
+    loadSubject()
+    subject.instance().generateWordFind()
+    expect(subject.state('shouldGenerate')).toEqual(true)
   })
 })

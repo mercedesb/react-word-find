@@ -1,4 +1,4 @@
-import { Grid } from '../Grid'
+import { Grid } from '../components/Grid'
 
 let grid 
 let subject
@@ -17,18 +17,6 @@ describe('Grid', () => {
   describe('#size', () => {
     it ('returns 49', () => {
       expect(grid.size).toEqual(49)
-    })
-  })
-
-  describe('#rows', () => {
-    it ('returns 7', () => {
-      expect(grid.rows).toEqual(7)
-    })
-  })
-
-  describe('#columns', () => {
-    it ('returns 7', () => {
-      expect(grid.columns).toEqual(7)
     })
   })
 

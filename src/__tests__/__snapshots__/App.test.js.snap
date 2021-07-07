@@ -18,23 +18,38 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <WordBank
-          onAdd={[Function]}
-          words={
-                    Array [
-                              "hello",
-                              "world",
-                            ]
-          }
-/>,
-        undefined,
-        undefined,
-        <button
-          className="Button Button--ghost"
-          onClick={[Function]}
+        <div
+          className="WordFind"
 >
-          Generate
-</button>,
+          <WordBank
+                    onAdd={[Function]}
+                    words={
+                              Array [
+                                        "hello",
+                                        "world",
+                                      ]
+                    }
+          />
+          <div
+                    className="WordFind-config"
+          >
+                    <label>
+                              Grid size (up to 15)
+                              <input
+                                        onChange={[Function]}
+                                        type="number"
+                                        value={7}
+                              />
+                    </label>
+                    <button
+                              className="Button Button--ghost"
+                              onClick={[Function]}
+                    >
+                              Generate Word Find
+                    </button>
+          </div>
+</div>,
+        undefined,
       ],
       "className": "App",
     },
@@ -43,33 +58,134 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "onAdd": [Function],
-          "words": Array [
-            "hello",
-            "world",
-          ],
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      undefined,
-      undefined,
-      Object {
-        "instance": null,
-        "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Generate",
-          "className": "Button Button--ghost",
-          "onClick": [Function],
+          "children": Array [
+            <WordBank
+              onAdd={[Function]}
+              words={
+                            Array [
+                                          "hello",
+                                          "world",
+                                        ]
+              }
+/>,
+            <div
+              className="WordFind-config"
+>
+              <label>
+                            Grid size (up to 15)
+                            <input
+                                          onChange={[Function]}
+                                          type="number"
+                                          value={7}
+                            />
+              </label>
+              <button
+                            className="Button Button--ghost"
+                            onClick={[Function]}
+              >
+                            Generate Word Find
+              </button>
+</div>,
+          ],
+          "className": "WordFind",
         },
         "ref": null,
-        "rendered": "Generate",
-        "type": "button",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "onAdd": [Function],
+              "words": Array [
+                "hello",
+                "world",
+              ],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <label>
+                  Grid size (up to 15)
+                  <input
+                                    onChange={[Function]}
+                                    type="number"
+                                    value={7}
+                  />
+</label>,
+                <button
+                  className="Button Button--ghost"
+                  onClick={[Function]}
+>
+                  Generate Word Find
+</button>,
+              ],
+              "className": "WordFind-config",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Grid size (up to 15)",
+                    <input
+                      onChange={[Function]}
+                      type="number"
+                      value={7}
+/>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Grid size (up to 15)",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "onChange": [Function],
+                      "type": "number",
+                      "value": 7,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                ],
+                "type": "label",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Generate Word Find",
+                  "className": "Button Button--ghost",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Generate Word Find",
+                "type": "button",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
       },
+      undefined,
     ],
     "type": "div",
   },
@@ -80,23 +196,38 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <WordBank
-            onAdd={[Function]}
-            words={
-                        Array [
-                                    "hello",
-                                    "world",
-                                  ]
-            }
-/>,
-          undefined,
-          undefined,
-          <button
-            className="Button Button--ghost"
-            onClick={[Function]}
+          <div
+            className="WordFind"
 >
-            Generate
-</button>,
+            <WordBank
+                        onAdd={[Function]}
+                        words={
+                                    Array [
+                                                "hello",
+                                                "world",
+                                              ]
+                        }
+            />
+            <div
+                        className="WordFind-config"
+            >
+                        <label>
+                                    Grid size (up to 15)
+                                    <input
+                                                onChange={[Function]}
+                                                type="number"
+                                                value={7}
+                                    />
+                        </label>
+                        <button
+                                    className="Button Button--ghost"
+                                    onClick={[Function]}
+                        >
+                                    Generate Word Find
+                        </button>
+            </div>
+</div>,
+          undefined,
         ],
         "className": "App",
       },
@@ -105,33 +236,134 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "onAdd": [Function],
-            "words": Array [
-              "hello",
-              "world",
-            ],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        undefined,
-        undefined,
-        Object {
-          "instance": null,
-          "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Generate",
-            "className": "Button Button--ghost",
-            "onClick": [Function],
+            "children": Array [
+              <WordBank
+                onAdd={[Function]}
+                words={
+                                Array [
+                                                "hello",
+                                                "world",
+                                              ]
+                }
+/>,
+              <div
+                className="WordFind-config"
+>
+                <label>
+                                Grid size (up to 15)
+                                <input
+                                                onChange={[Function]}
+                                                type="number"
+                                                value={7}
+                                />
+                </label>
+                <button
+                                className="Button Button--ghost"
+                                onClick={[Function]}
+                >
+                                Generate Word Find
+                </button>
+</div>,
+            ],
+            "className": "WordFind",
           },
           "ref": null,
-          "rendered": "Generate",
-          "type": "button",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "onAdd": [Function],
+                "words": Array [
+                  "hello",
+                  "world",
+                ],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <label>
+                    Grid size (up to 15)
+                    <input
+                                        onChange={[Function]}
+                                        type="number"
+                                        value={7}
+                    />
+</label>,
+                  <button
+                    className="Button Button--ghost"
+                    onClick={[Function]}
+>
+                    Generate Word Find
+</button>,
+                ],
+                "className": "WordFind-config",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Grid size (up to 15)",
+                      <input
+                        onChange={[Function]}
+                        type="number"
+                        value={7}
+/>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Grid size (up to 15)",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "onChange": [Function],
+                        "type": "number",
+                        "value": 7,
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "input",
+                    },
+                  ],
+                  "type": "label",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Generate Word Find",
+                    "className": "Button Button--ghost",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "Generate Word Find",
+                  "type": "button",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
         },
+        undefined,
       ],
       "type": "div",
     },

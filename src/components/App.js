@@ -7,7 +7,7 @@ class App extends Component {
   state = {
     words: ['hello', 'world'],
     shouldGenerate: false,
-    buttonText: 'Generate'
+    size: 7
   }
 
   onAdd = (word) => {
@@ -16,12 +16,12 @@ class App extends Component {
     this.setState({words: currentWordBank})
   }
 
-  generateWordFind = () => {
-    this.setState({ shouldGenerate: true, noSolution: false })
+  onSizeChange = (event) => {
+    this.setState({ size: parseInt(event.target.value, 10) })
   }
 
-  handleNoSolution = () => {
-    this.setState({ noSolution: true, buttonText: 'Try Again' })
+  generateWordFind = () => {
+    this.setState({ shouldGenerate: true })
   }
 
   buildPuzzle = () => {
@@ -29,7 +29,7 @@ class App extends Component {
       return (
         <PuzzleGenerator
           wordBank={this.state.words}
-          handleNoSolution={this.handleNoSolution}
+          size={this.state.size}
         />
       )
     }
@@ -38,17 +38,26 @@ class App extends Component {
   render () {
     return (
       <div className='App'>
-        <WordBank
-          words={this.state.words}
-          onAdd={this.onAdd}
-        />
-        { this.state.noSolution && (
-          <div>No solution found including '{this.state.words[this.state.words.length-1]}', try again?</div>
-        )}
+        <div className='WordFind'>
+          <WordBank
+            words={this.state.words}
+            onAdd={this.onAdd}
+          />
+          <div className='WordFind-config'>
+            <label>
+              Grid size (up to 15)
+              <input 
+                type='number'
+                onChange={this.onSizeChange}
+                value={this.state.size}
+              />
+            </label>
+            <button className='Button Button--ghost' onClick={this.generateWordFind}>Generate Word Find</button>
+          </div>
+        </div>
         {
           this.buildPuzzle()
         } 
-        <button className='Button Button--ghost' onClick={this.generateWordFind}>{this.state.buttonText}</button>
       </div>
     )
   }
